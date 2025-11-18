@@ -15,8 +15,8 @@ from datetime import datetime
 class Toolbox(object):
     def __init__(self):
         """Define the toolbox name and the tools contained."""
-        self.label = "AEP Tools"
-        self.alias = "aep_tools"
+        self.label = "AEP_GPS_Tools_v1"
+        self.alias = "aep_gps_tools_v1"
 
         # Add tools to the toolbox
         self.tools = [ImportGPXAndAppend]
@@ -34,7 +34,7 @@ class ImportGPXAndAppend(object):
             "This tool processes a GPX file, clips it to a buffered Study Area, "
             "and appends the resulting features to the Survey Tracks layer."
         )
-        self.category = "GPS Files"
+        self.category = "GPX Files"
         self.canRunInBackground = False
 
         # Logging setup
@@ -240,3 +240,4 @@ class ImportGPXAndAppend(object):
         except Exception as e:
             logging.error(f"Unexpected error occurred: {e}")
             arcpy.AddError(f"Unexpected error occurred: {e}")
+
